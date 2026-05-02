@@ -1,0 +1,66 @@
+import { Helmet } from 'react-helmet-async';
+import { useParams, Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+
+export default function ResearchDetail() {
+  const { slug } = useParams();
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['research', slug],
+    queryFn: async () => {
+      const res = await fetch(`/api/v1/research/${slug}`);
+      if (!res.ok) throw new Error('Failed to fetch article');
+      return res.json();
+    }
+  });
+
+  if (isLoading) {
+    return <div className="max-w-prose mx-auto px-4 py-16 text-text-muted">جاري تحميل المقال...</div>;
+  }
+
+  if (error || !data) {
+    return <div className="max-w-prose mx-auto px-4 py-16 text-red-600">حدث خطأ أثناء تحميل المقال.</div>;
+  }
+
+  return (
+    <>
+      <Helmet>
+        <title>{data.title} · منتدى سياسات الشرق الأوسط</title>
+        <meta name="description" content={data.summary} />
+      </Helmet>
+      <article className="max-w-prose mx-auto px-4 py-16 md:py-24">
+        {data.topic_name && (
+          <p className="text-sm uppercase tracking-wider text-accent mb-4 font-semibold">
+            {data.topic_name}
+          </p>
+        )}
+        <h1 className="font-serif text-3xl md:text-5xl leading-tight mb-6">
+          {data.title}
+        </h1>
+        <p className="text-xl text-text-muted mb-8 leading-relaxed">
+          {data.summary}
+        </p>
+        
+        <div className="flex items-center gap-4 py-6 border-y border-border mb-12">
+          {data.author_name && (
+            <div>
+              <p className="text-sm font-semibold">
+                <Link to={`/people/${data.author_slug}`} className="hover:underline text-text">
+                  {data.author_name}
+                </Link>
+              </p>
+            </div>
+          )}
+          <div className="ms-auto text-sm text-text-faint">
+            {new Date(data.published_at).toLocaleDateString('ar-EG', { month: 'long', day: 'numeric', year: 'numeric' })}
+          </div>
+        </div>
+
+        <div 
+          className="text-lg leading-relaxed text-text [&>p]:mb-6 [&>h2]:text-2xl [&>h2]:font-serif [&>h2]:mt-10 [&>h2]:mb-4 [&>h3]:text-xl [&>h3]:font-serif [&>h3]:mt-8 [&>h3]:mb-3 [&>ul]:list-disc [&>ul]:ms-6 [&>ul]:mb-6 [&>blockquote]:border-s-4 [&>blockquote]:border-accent [&>blockquote]:ps-4 [&>blockquote]:italic [&>blockquote]:my-6"
+          dangerouslySetInnerHTML={{ __html: data.body_html }} 
+        />
+      </article>
+    </>
+  );
+}

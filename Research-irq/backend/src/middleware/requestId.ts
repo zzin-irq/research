@@ -1,0 +1,11 @@
+import type { Request, Response, NextFunction } from 'express';
+import { randomUUID } from 'node:crypto';
+
+export function requestId(req: Request, res: Response, next: NextFunction) {
+  const incoming = req.header('x-request-id');
+  const id = incoming && /^[a-zA-Z0-9-]{8,64}$/.test(incoming) ? incoming : randomUUID();
+  res.setHeader('x-request-id', id);
+  // attach to req for log correlation
+  (req as Request & { id: string }).id = id;
+  next();
+}
