@@ -13,10 +13,10 @@ export default function Home() {
       </Helmet>
 
       {/* Hero Section: image top, text bottom */}
-      <section className="overflow-hidden text-white bg-[#CE8259] flex flex-col items-center py-8 md:py-16 px-4">
+      <section className="overflow-hidden bg-[#F5E6D3] flex flex-col items-center py-8 md:py-16 px-4">
 
         {/* Top: Mosque image — centered, constrained width */}
-        <div className="w-full max-w-sm md:max-w-lg rounded-2xl overflow-hidden shadow-2xl">
+        <div className="w-full max-w-sm md:max-w-lg rounded-2xl overflow-hidden shadow-lg">
           <img
             src={`${import.meta.env.BASE_URL}mosque-hero.jpg`}
             alt="مسجد في المنطقة العربية"
@@ -26,25 +26,25 @@ export default function Home() {
 
         {/* Bottom: Text content */}
         <div className="mt-6 md:mt-10 text-center max-w-2xl w-full">
-          <h1 className="font-serif text-3xl md:text-[4rem] leading-tight font-bold mb-4 md:mb-6 drop-shadow-lg text-white">
+          <h1 className="font-serif text-3xl md:text-[4rem] leading-tight font-bold mb-4 md:mb-6 text-[#3D2B1F]">
             منتدى سياسات
             <br />
             الشرق الأوسط
           </h1>
-          <hr className="my-4 md:my-6 mx-auto w-16 md:w-24 border-0 h-1 bg-[#E5AA5D] rounded-full shadow-lg" />
-          <p className="text-base md:text-2xl text-black mb-8 md:mb-10 leading-relaxed font-light drop-shadow-md px-2">
+          <hr className="my-4 md:my-6 mx-auto w-16 md:w-24 border-0 h-1 bg-[#C8956A] rounded-full" />
+          <p className="text-base md:text-xl text-[#5C4030] mb-8 md:mb-10 leading-relaxed px-2">
             أبحاث مستقلة حول القضايا التي ترسم معالم الحياة العامة، برؤية محلية للمنطقة العربية وعمق دولي.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
             <Link
               to="/research"
-              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded-full bg-[#CA8737] text-white font-bold text-base md:text-lg hover:bg-[#E5AA5D] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded-full bg-[#8B5E3C] text-white font-bold text-base md:text-lg hover:bg-[#6B4428] shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
             >
               تصفح أحدث الأبحاث
             </Link>
             <Link
               to="/about"
-              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded-full border-2 border-[#FDE3B4]/80 text-[#FDE3B4] font-bold text-base md:text-lg hover:bg-[#FDE3B4]/10 transition-all backdrop-blur-sm"
+              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded-full border-2 border-[#8B5E3C] text-[#8B5E3C] font-bold text-base md:text-lg hover:bg-[#8B5E3C]/10 transition-all"
             >
               عن المنتدى
             </Link>
