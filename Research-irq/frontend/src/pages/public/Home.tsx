@@ -12,46 +12,42 @@ export default function Home() {
         />
       </Helmet>
 
-      {/* Hero Section: Split layout — image left, text right */}
-      <section className="overflow-hidden text-white bg-[#CE8259] flex flex-col md:flex-row min-h-[560px]">
+      {/* Hero Section: image top, text bottom */}
+      <section className="overflow-hidden text-white bg-[#CE8259] flex flex-col items-center py-16 px-4">
 
-        {/* Left: Mosque image */}
-        <div className="w-full md:w-1/2 relative min-h-[320px] md:min-h-0">
+        {/* Top: Mosque image — centered, constrained width */}
+        <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-2xl">
           <img
             src={`${import.meta.env.BASE_URL}mosque-hero.jpg`}
             alt="مسجد في المنطقة العربية"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="w-full h-64 md:h-80 object-cover object-center"
           />
-          {/* Subtle right-edge fade into the warm background */}
-          <div className="absolute inset-0 bg-gradient-to-l from-[#CE8259]/70 via-transparent to-transparent md:bg-gradient-to-r" />
         </div>
 
-        {/* Right: Text content */}
-        <div className="w-full md:w-1/2 flex items-center relative z-10">
-          <div className="px-8 md:px-16 py-16 md:py-24 text-right w-full">
-            <h1 className="font-serif text-[2.5rem] md:text-[4rem] leading-tight font-bold mb-6 drop-shadow-lg text-white">
-              منتدى سياسات
-              <br />
-              الشرق الأوسط
-            </h1>
-            <hr className="my-8 mr-0 ml-auto w-24 border-0 h-1 bg-[#E5AA5D] rounded-full shadow-lg" />
-            <p className="text-xl md:text-2xl text-black mb-10 leading-relaxed font-light drop-shadow-md">
-              أبحاث مستقلة حول القضايا التي ترسم معالم الحياة العامة، برؤية محلية للمنطقة العربية وعمق دولي.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-4 justify-end">
-              <Link
-                to="/research"
-                className="h-14 px-8 inline-flex items-center rounded-full bg-[#CA8737] text-white font-bold text-lg hover:bg-[#E5AA5D] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-              >
-                تصفح أحدث الأبحاث
-              </Link>
-              <Link
-                to="/about"
-                className="h-14 px-8 inline-flex items-center rounded-full border-2 border-[#FDE3B4]/80 text-[#FDE3B4] font-bold text-lg hover:bg-[#FDE3B4]/10 transition-all backdrop-blur-sm"
-              >
-                عن المنتدى
-              </Link>
-            </div>
+        {/* Bottom: Text content */}
+        <div className="mt-10 text-center max-w-2xl">
+          <h1 className="font-serif text-[2.5rem] md:text-[4rem] leading-tight font-bold mb-6 drop-shadow-lg text-white">
+            منتدى سياسات
+            <br />
+            الشرق الأوسط
+          </h1>
+          <hr className="my-6 mx-auto w-24 border-0 h-1 bg-[#E5AA5D] rounded-full shadow-lg" />
+          <p className="text-xl md:text-2xl text-black mb-10 leading-relaxed font-light drop-shadow-md">
+            أبحاث مستقلة حول القضايا التي ترسم معالم الحياة العامة، برؤية محلية للمنطقة العربية وعمق دولي.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link
+              to="/research"
+              className="h-14 px-8 inline-flex items-center rounded-full bg-[#CA8737] text-white font-bold text-lg hover:bg-[#E5AA5D] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              تصفح أحدث الأبحاث
+            </Link>
+            <Link
+              to="/about"
+              className="h-14 px-8 inline-flex items-center rounded-full border-2 border-[#FDE3B4]/80 text-[#FDE3B4] font-bold text-lg hover:bg-[#FDE3B4]/10 transition-all backdrop-blur-sm"
+            >
+              عن المنتدى
+            </Link>
           </div>
         </div>
       </section>
