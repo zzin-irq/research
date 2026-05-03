@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "slug": "maya-rodriguez",
+    "name": "مايا رودريغيز",
+    "role": "باحث أول، العلاقات الدولية",
+    "photo_url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    "bio_html": "<p>تبحث مايا في الحنكة النقدية ونظام ما بعد بريتون وودز. يركز عملها الأخير على التقاطع بين التجارة الدولية والأمن الجيوسياسي.</p>",
+    "links": [{ "label": "ORCID", "href": "https://orcid.org/0000-0000-0000-0000" }]
+  },
+  {
+    "id": "2",
+    "slug": "jordan-kim",
+    "name": "جوردان كيم",
+    "role": "مدير الأبحاث، السياسة العامة",
+    "photo_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+    "bio_html": "<p>يقود جوردان برنامج السياسة الداخلية للمنتدى، ويتخصص في القدرة على تحمل تكاليف الإسكان، والتنمية الحضرية، والإصلاح الهيكلي.</p>",
+    "links": []
+  },
+  {
+    "id": "3",
+    "slug": "elena-vance",
+    "name": "إيلينا فانس",
+    "role": "مؤرخ مقيم",
+    "photo_url": "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    "bio_html": "<p>تتخصص إيلينا في التاريخ الدبلوماسي للقرن العشرين وأصول المؤسسات الحديثة متعددة الجنسيات.</p>",
+    "links": []
+  }
+]

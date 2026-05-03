@@ -12,32 +12,46 @@ export default function Home() {
         />
       </Helmet>
 
-      {/* Hero Section: Gradient from Indigo to Cyan */}
-      <section className="bg-gradient-to-br from-[#312E81] via-[#1E3A8A] to-[#06B6D4] text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
-        <div className="max-w-content mx-auto px-4 md:px-12 py-24 md:py-36 text-center relative z-10">
-          <h1 className="font-serif text-[2.5rem] md:text-[4.5rem] leading-tight font-bold mb-6 drop-shadow-lg">
-            منتدى سياسات
-            <br />
-            الشرق الأوسط
-          </h1>
-          <hr className="my-8 mx-auto w-24 border-0 h-1 bg-warning rounded-full shadow-lg" />
-          <p className="text-xl md:text-2xl text-indigo-100 max-w-prose mx-auto mb-10 leading-relaxed font-light">
-            أبحاث مستقلة حول القضايا التي ترسم معالم الحياة العامة، برؤية محلية للمنطقة العربية وعمق دولي.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-4 justify-center">
-            <Link
-              to="/research"
-              className="h-14 px-8 inline-flex items-center rounded-full bg-warning text-white font-bold text-lg hover:bg-yellow-600 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-            >
-              تصفح أحدث الأبحاث
-            </Link>
-            <Link
-              to="/about"
-              className="h-14 px-8 inline-flex items-center rounded-full border-2 border-white/80 text-white font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
-            >
-              عن المنتدى
-            </Link>
+      {/* Hero Section: Split layout — image left, text right */}
+      <section className="overflow-hidden text-white bg-[#CE8259] flex flex-col md:flex-row min-h-[560px]">
+
+        {/* Left: Mosque image */}
+        <div className="w-full md:w-1/2 relative min-h-[320px] md:min-h-0">
+          <img
+            src="/mosque-hero.jpg"
+            alt="مسجد في المنطقة العربية"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+          {/* Subtle right-edge fade into the warm background */}
+          <div className="absolute inset-0 bg-gradient-to-l from-[#CE8259]/70 via-transparent to-transparent md:bg-gradient-to-r" />
+        </div>
+
+        {/* Right: Text content */}
+        <div className="w-full md:w-1/2 flex items-center relative z-10">
+          <div className="px-8 md:px-16 py-16 md:py-24 text-right w-full">
+            <h1 className="font-serif text-[2.5rem] md:text-[4rem] leading-tight font-bold mb-6 drop-shadow-lg text-white">
+              منتدى سياسات
+              <br />
+              الشرق الأوسط
+            </h1>
+            <hr className="my-8 mr-0 ml-auto w-24 border-0 h-1 bg-[#E5AA5D] rounded-full shadow-lg" />
+            <p className="text-xl md:text-2xl text-black mb-10 leading-relaxed font-light drop-shadow-md">
+              أبحاث مستقلة حول القضايا التي ترسم معالم الحياة العامة، برؤية محلية للمنطقة العربية وعمق دولي.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4 justify-end">
+              <Link
+                to="/research"
+                className="h-14 px-8 inline-flex items-center rounded-full bg-[#CA8737] text-white font-bold text-lg hover:bg-[#E5AA5D] shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+              >
+                تصفح أحدث الأبحاث
+              </Link>
+              <Link
+                to="/about"
+                className="h-14 px-8 inline-flex items-center rounded-full border-2 border-[#FDE3B4]/80 text-[#FDE3B4] font-bold text-lg hover:bg-[#FDE3B4]/10 transition-all backdrop-blur-sm"
+              >
+                عن المنتدى
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -45,16 +59,7 @@ export default function Home() {
       {/* Research Section */}
       <section className="max-w-wide mx-auto px-4 md:px-12 py-24">
         
-        {/* Filter / Sort Tabs */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold">الأبحاث المختارة</h2>
-          
-          <div className="flex bg-surface-muted p-1 rounded-full border border-border">
-            <button className="px-6 py-2 rounded-full bg-surface shadow-sm text-sm font-bold text-primary border border-border">الأحدث</button>
-            <button className="px-6 py-2 rounded-full text-sm font-medium text-text-muted hover:text-text transition-colors">الأكثر قراءة</button>
-            <button className="px-6 py-2 rounded-full text-sm font-medium text-text-muted hover:text-text transition-colors">الموضوعات</button>
-          </div>
-        </div>
+        <h2 className="font-serif text-3xl md:text-4xl font-bold mb-12">الأبحاث المختارة</h2>
 
         <div className="grid gap-8 md:grid-cols-3">
           {[1, 2, 3].map(i => {

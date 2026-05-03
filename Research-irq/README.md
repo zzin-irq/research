@@ -54,4 +54,4 @@ Frontend runs on `http://localhost:5173`, API on `http://localhost:4000`.
 
 ## Contact
 
-Maintainer: plainfield2025@gmail.com
+Maintainer: zzinchicago@gmail.com
