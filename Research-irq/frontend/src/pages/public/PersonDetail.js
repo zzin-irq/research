@@ -1,0 +1,12 @@
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { Helmet } from 'react-helmet-async';
+import { useParams, Link } from 'react-router-dom';
+import people from '../../data/people.json';
+export default function PersonDetail() {
+    const { slug } = useParams();
+    const data = people.find(p => p.slug === slug);
+    if (!data) {
+        return (_jsxs("div", { className: "max-w-prose mx-auto px-4 py-16 text-text-muted", children: ["\u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0634\u062E\u0635\u064A \u063A\u064A\u0631 \u0645\u0648\u062C\u0648\u062F. ", _jsx(Link, { to: "/people", className: "text-primary hover:underline", children: "\u0627\u0644\u0639\u0648\u062F\u0629 \u0644\u0644\u062E\u0628\u0631\u0627\u0621" })] }));
+    }
+    return (_jsxs(_Fragment, { children: [_jsx(Helmet, { children: _jsxs("title", { children: [data.name, " \u00B7 \u0645\u0646\u062A\u062F\u0649 \u0633\u064A\u0627\u0633\u0627\u062A \u0627\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637"] }) }), _jsx("div", { className: "max-w-content mx-auto px-4 md:px-12 py-16 md:py-24", children: _jsxs("div", { className: "flex flex-col md:flex-row gap-12", children: [data.photo_url && (_jsx("div", { className: "md:w-1/3 flex-shrink-0", children: _jsx("div", { className: "aspect-square w-full overflow-hidden rounded-lg bg-surface-muted", children: _jsx("img", { src: data.photo_url, alt: data.name, className: "h-full w-full object-cover" }) }) })), _jsxs("div", { className: "md:w-2/3", children: [_jsx("h1", { className: "font-serif text-3xl md:text-5xl leading-tight mb-2", children: data.name }), _jsx("p", { className: "text-xl text-text-muted mb-8 pb-8 border-b border-border", children: data.role }), _jsx("div", { className: "text-lg leading-relaxed text-text [&>p]:mb-6", dangerouslySetInnerHTML: { __html: data.bio_html } }), data.links.length > 0 && (_jsxs("div", { className: "mt-8 pt-8 border-t border-border", children: [_jsx("h3", { className: "text-sm font-semibold uppercase tracking-wider text-text-muted mb-4", children: "\u0627\u0644\u0631\u0648\u0627\u0628\u0637" }), _jsx("ul", { className: "flex flex-col gap-2", children: data.links.map((link, i) => (_jsx("li", { children: _jsx("a", { href: link.href, target: "_blank", rel: "noopener noreferrer", className: "text-primary hover:underline", children: link.label }) }, i))) })] }))] })] }) })] }));
+}

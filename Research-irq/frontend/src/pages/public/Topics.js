@@ -1,0 +1,7 @@
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import topics from '../../data/topics.json';
+export default function Topics() {
+    return (_jsxs(_Fragment, { children: [_jsx(Helmet, { children: _jsx("title", { children: "\u0627\u0644\u0645\u0648\u0627\u0636\u064A\u0639 \u00B7 \u0645\u0646\u062A\u062F\u0649 \u0633\u064A\u0627\u0633\u0627\u062A \u0627\u0644\u0634\u0631\u0642 \u0627\u0644\u0623\u0648\u0633\u0637" }) }), _jsxs("div", { className: "max-w-content mx-auto px-4 md:px-12 py-16", children: [_jsx("h1", { className: "font-serif text-3xl md:text-4xl mb-8", children: "\u0627\u0644\u0645\u0648\u0627\u0636\u064A\u0639" }), _jsx("div", { className: "grid gap-6 md:grid-cols-2", children: topics.map(topic => (_jsxs(Link, { to: `/research?topic=${topic.slug}`, className: "group block p-8 rounded-lg border border-border bg-surface hover:border-primary transition-colors", children: [_jsx("h3", { className: "font-serif text-2xl group-hover:text-primary mb-3 text-text", children: topic.name }), _jsx("p", { className: "text-text-muted", children: topic.description }), _jsx("div", { className: "mt-6 flex items-center text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity", children: "\u0639\u0631\u0636 \u0627\u0644\u0623\u0628\u062D\u0627\u062B \u2190" })] }, topic.id))) })] })] }));
+}

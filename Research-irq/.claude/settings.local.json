@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(curl:*)",
+      "PowerShell($env:PGPASSWORD = \"odoo\"; & \"C:\\\\Program Files\\\\Odoo 19\\\\PostgreSQL\\\\bin\\\\psql.exe\" -U postgres -w -c \"\\\\l\" 2>&1 | Select-Object -First 30)"
+    ]
+  }
+}
