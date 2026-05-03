@@ -18,7 +18,7 @@ export default function Home() {
         {/* Left: Mosque image */}
         <div className="w-full md:w-1/2 relative min-h-[320px] md:min-h-0">
           <img
-            src="/mosque-hero.jpg"
+            src={`${import.meta.env.BASE_URL}mosque-hero.jpg`}
             alt="مسجد في المنطقة العربية"
             className="absolute inset-0 w-full h-full object-cover object-center"
           />
