@@ -12,59 +12,51 @@
 }
 
 :root {
-  /* Surfaces — soft ivory + warm beige for a calm, paper-like feel */
-  --color-bg: #F7F2EA;            /* Warm ivory, low-glare */
-  --color-surface: #FCF8F2;       /* Card surface, off-white */
-  --color-surface-muted: #ECE3D4; /* Latte / muted beige */
-  --color-border: #DCD0BD;        /* Soft warm gray */
-  --color-border-strong: #B6A689; /* Muted taupe */
+  /* Surfaces */
+  --color-bg: #FAFAF7;
+  --color-surface: #FFFFFF;
+  --color-surface-muted: #F3F4F6;
+  --color-border: #E5E7EB;
+  --color-border-strong: #D1D5DB;
 
-  /* Text — warm dark brown rather than harsh black, easier on the eyes */
-  --color-text: #2E2620;          /* Espresso, AA on bg (~13.4:1) */
-  --color-text-muted: #5C4F44;    /* Cocoa */
-  --color-text-faint: #8A7B6C;    /* Mushroom */
+  /* Text */
+  --color-text: #111827;
+  --color-text-muted: #4B5563;
+  --color-text-faint: #9CA3AF;
 
-  /* Brand — relaxed walnut + bronze, brown leads */
-  --color-primary: #6B5544;       /* Walnut, calm and grounded */
-  --color-primary-hover: #54433A; /* Deeper walnut for hover */
-  --color-accent: #9B7E5A;        /* Bronze for highlights and links */
-  --color-accent-soft: #E6D9C3;   /* Soft latte fill for callouts/badges */
-
-  /* Status — desaturated, in family with the brown palette */
-  --color-success: #6E8B6B;       /* Muted sage */
-  --color-warning: #B98A4F;       /* Honey */
-  --color-danger:  #B0594E;       /* Muted clay */
+  /* Brand - Custom Palette */
+  --color-primary: #312E81;
+  --color-primary-hover: #3730A3;
+  --color-accent: #06B6D4;
+  --color-accent-soft: #CFFAFE;
+  
+  /* Status / Highlights */
+  --color-success: #10B981;
+  --color-warning: #F59E0B; /* Highlight: Amber */
+  --color-danger: #EF4444;
 
   /* Focus */
-  --color-focus-ring: #6B5544;
+  --color-focus-ring: #06B6D4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Surfaces — warm dark brown rather than blue-black */
-    --color-bg: #1B1611;
-    --color-surface: #221C16;
-    --color-surface-muted: #2C2419;
-    --color-border: #3A3025;
-    --color-border-strong: #564737;
+    --color-bg: #0F172A;
+    --color-surface: #1E293B;
+    --color-surface-muted: #334155;
+    --color-border: #475569;
+    --color-border-strong: #64748B;
 
-    /* Text — warm off-white */
-    --color-text: #ECE3D2;
-    --color-text-muted: #B7AA98;
-    --color-text-faint: #877B6B;
+    --color-text: #F8FAFC;
+    --color-text-muted: #94A3B8;
+    --color-text-faint: #64748B;
 
-    /* Brand — lifted for dark surfaces */
-    --color-primary: #C8A987;        /* Soft caramel */
-    --color-primary-hover: #D8BC9C;
-    --color-accent: #D6B88E;
-    --color-accent-soft: #2E2519;
+    --color-primary: #818CF8;
+    --color-primary-hover: #A5B4FC;
+    --color-accent: #22D3EE;
+    --color-accent-soft: #164E63;
 
-    /* Status */
-    --color-success: #8FAA88;
-    --color-warning: #D6A974;
-    --color-danger:  #CE8074;
-
-    --color-focus-ring: #C8A987;
+    --color-focus-ring: #818CF8;
   }
 }
 
