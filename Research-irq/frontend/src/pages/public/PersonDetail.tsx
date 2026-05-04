@@ -21,13 +21,13 @@ export default function PersonDetail() {
         <div className="flex flex-col md:flex-row gap-12">
           {data.photo_url && (
             <div className="md:w-1/3 flex-shrink-0">
-              <div className="aspect-square w-full overflow-hidden rounded-lg bg-surface-muted">
+              <div className="aspect-square w-full overflow-hidden rounded-xl bg-surface-muted">
                 <img src={data.photo_url} alt={data.name} className="h-full w-full object-cover" />
               </div>
             </div>
           )}
           <div className="md:w-2/3">
-            <h1 className="font-serif text-3xl md:text-5xl leading-tight mb-2">{data.name}</h1>
+            <h1 className="font-serif text-3xl md:text-5xl leading-tight font-bold mb-2 text-accent-dark">{data.name}</h1>
             <p className="text-xl text-text-muted mb-8 pb-8 border-b border-border">{data.role}</p>
             <div
               className="text-lg leading-relaxed text-text [&>p]:mb-6"

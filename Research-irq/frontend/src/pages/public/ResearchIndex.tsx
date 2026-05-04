@@ -4,12 +4,12 @@ import articles from '../../data/research.json';
 
 function getCategoryColor(topicName: string) {
   if (topicName.includes('السياسة') || topicName.includes('Policy'))
-    return 'border-blue-500 bg-blue-50 text-blue-700';
+    return 'bg-primary bg-accent-soft text-primary';
   if (topicName.includes('العلاقات') || topicName.includes('Relations'))
-    return 'border-emerald-500 bg-emerald-50 text-emerald-700';
+    return 'bg-accent bg-teal-surface text-accent';
   if (topicName.includes('التاريخ') || topicName.includes('History'))
-    return 'border-purple-500 bg-purple-50 text-purple-700';
-  return 'border-primary bg-surface-muted text-primary';
+    return 'bg-text-muted bg-surface-muted text-text-muted';
+  return 'bg-primary bg-accent-soft text-primary';
 }
 
 export default function ResearchIndex() {
@@ -26,7 +26,8 @@ export default function ResearchIndex() {
         <meta name="description" content="أبحاث من المنتدى حول السياسة العامة، والعلاقات الدولية، والتاريخ." />
       </Helmet>
       <div className="max-w-content mx-auto px-4 md:px-12 py-16 md:py-24">
-        <h1 className="font-serif text-3xl md:text-5xl font-bold mb-12">أحدث الأبحاث</h1>
+        <h1 className="font-serif text-3xl md:text-5xl font-bold mb-3 text-accent-dark">أحدث الأبحاث</h1>
+        <div className="h-0.5 bg-accent-soft mb-12 w-full" />
 
         {items.length === 0 && (
           <p className="text-text-muted text-lg">لا توجد أبحاث في هذا الموضوع.</p>
@@ -39,16 +40,16 @@ export default function ResearchIndex() {
             return (
               <article
                 key={article.id}
-                className="group bg-surface border border-border shadow-sm rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full relative"
+                className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-primary transition-colors duration-200 flex flex-col h-full relative"
               >
-                <div className={`absolute top-0 right-0 w-1 h-full ${borderColor} opacity-50`} />
-                <div className="p-6 md:p-8 flex flex-col h-full z-10">
+                <div className={`absolute top-0 right-0 w-1 h-full ${borderColor} opacity-60`} />
+                <div className="p-6 flex flex-col h-full z-10">
                   <div className="mb-4">
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${badge.join(' ')}`}>
                       {article.topic_name}
                     </span>
                   </div>
-                  <h3 className="font-serif text-2xl font-bold mb-4 leading-tight group-hover:text-primary transition-colors">
+                  <h3 className="font-serif text-xl font-semibold mb-4 leading-tight text-text group-hover:text-primary transition-colors">
                     <Link to={`/research/${article.slug}`} className="before:absolute before:inset-0">
                       {article.title}
                     </Link>

@@ -6,14 +6,15 @@ export default function Events() {
     <>
       <Helmet><title>الفعاليات · منتدى سياسات الشرق الأوسط</title></Helmet>
       <div className="max-w-content mx-auto px-4 md:px-12 py-16">
-        <h1 className="font-serif text-3xl md:text-4xl mb-8">الفعاليات</h1>
+        <h1 className="font-serif text-3xl md:text-4xl font-bold mb-3 text-accent-dark">الفعاليات</h1>
+        <div className="h-0.5 bg-accent-soft mb-8 w-full" />
         {events.length === 0 && <p className="text-text-muted">لا توجد فعاليات قادمة.</p>}
         <div className="flex flex-col gap-8">
           {events.map(event => {
             const startDate = new Date(event.starts_at);
             const endDate = event.ends_at ? new Date(event.ends_at) : null;
             return (
-              <div key={event.id} className="flex flex-col md:flex-row gap-6 p-6 rounded-lg border border-border bg-surface hover:border-border-strong transition-colors">
+              <div key={event.id} className="flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-border bg-surface hover:border-primary transition-colors">
                 <div className="md:w-1/4 flex-shrink-0">
                   <div className="text-accent font-bold text-lg mb-1">
                     {startDate.toLocaleDateString('ar-EG', { month: 'short', day: 'numeric' })}
@@ -33,7 +34,7 @@ export default function Events() {
                   )}
                   {event.rsvp_url && (
                     <a href={event.rsvp_url} target="_blank" rel="noopener noreferrer"
-                      className="ms-4 inline-flex items-center h-8 px-4 text-sm font-medium rounded-md bg-primary text-white hover:bg-primary-hover">
+                      className="ms-4 inline-flex items-center h-11 px-5 text-sm font-medium rounded bg-primary text-white hover:bg-primary-hover transition-colors">
                       تسجيل الحضور
                     </a>
                   )}

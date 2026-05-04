@@ -5,4 +5,4 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { App } from './App';
 import './styles/tokens.css';
-ReactDOM.createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(HelmetProvider, { children: _jsx(BrowserRouter, { children: _jsx(App, {}) }) }) }));
+ReactDOM.createRoot(document.getElementById('root')).render(_jsx(React.StrictMode, { children: _jsx(HelmetProvider, { children: _jsx(BrowserRouter, { basename: import.meta.env.BASE_URL, children: _jsx(App, {}) }) }) }));

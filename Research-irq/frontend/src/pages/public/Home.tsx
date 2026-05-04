@@ -8,43 +8,32 @@ export default function Home() {
         <title>منتدى سياسات الشرق الأوسط</title>
         <meta
           name="description"
-          content="أبحاث مستقلة حول السياسة العامة، العلاقات الدولية، التاريخ، والقضايا التي ترسم معالم الحياة العامة."
+          content="منصة فكرية مستقلة تُعنى بتحليل التفاعلات الإستراتيجية وصياغة الرؤى السياسية المعمّقة، بهدف تعزيز الاستقرار المؤسسي وبناء جسور المعرفة بين الفكر الأكاديمي وصناعة القرار، مع التركيز على السياسات الدولية، ولا سيما ما يتعلق بمنطقة الشرق الأوسط."
         />
       </Helmet>
 
-      {/* Hero Section: image top, text bottom */}
-      <section className="overflow-hidden bg-[#F5E6D3] flex flex-col items-center py-8 md:py-16 px-4">
-
-        {/* Top: Mosque image — centered, constrained width */}
-        <div className="w-full max-w-sm md:max-w-lg rounded-2xl overflow-hidden shadow-lg">
-          <img
-            src={`${import.meta.env.BASE_URL}mosque-hero.jpg`}
-            alt="مسجد في المنطقة العربية"
-            className="w-full h-48 md:h-80 object-cover object-center"
-          />
-        </div>
-
-        {/* Bottom: Text content */}
-        <div className="mt-6 md:mt-10 text-center max-w-2xl w-full">
-          <h1 className="font-serif text-3xl md:text-[4rem] leading-tight font-bold mb-4 md:mb-6 text-[#3D2B1F]">
+      {/* Hero Section */}
+      <section className="bg-bg flex flex-col items-center py-16 md:py-24 px-4">
+        <div className="text-center max-w-2xl w-full">
+          <h1 className="font-serif text-3xl md:text-[4rem] leading-tight font-bold mb-4 md:mb-6 text-accent-dark">
             منتدى سياسات
             <br />
             الشرق الأوسط
           </h1>
-          <hr className="my-4 md:my-6 mx-auto w-16 md:w-24 border-0 h-1 bg-[#C8956A] rounded-full" />
-          <p className="text-base md:text-xl text-[#5C4030] mb-8 md:mb-10 leading-relaxed px-2">
-            أبحاث مستقلة حول القضايا التي ترسم معالم الحياة العامة، برؤية محلية للمنطقة العربية وعمق دولي.
+          <hr className="my-4 md:my-6 mx-auto w-16 md:w-24 border-0 h-1 bg-primary rounded-full" />
+          <p className="text-base md:text-xl text-text mb-8 md:mb-10 leading-relaxed px-2">
+            منصة فكرية مستقلة تُعنى بتحليل التفاعلات الإستراتيجية وصياغة الرؤى السياسية المعمّقة، بهدف تعزيز الاستقرار المؤسسي وبناء جسور المعرفة بين الفكر الأكاديمي وصناعة القرار، مع التركيز على السياسات الدولية، ولا سيما ما يتعلق بمنطقة الشرق الأوسط
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
             <Link
               to="/research"
-              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded-full bg-[#8B5E3C] text-white font-bold text-base md:text-lg hover:bg-[#6B4428] shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded bg-primary text-white font-bold text-base md:text-lg hover:bg-primary-hover transition-colors"
             >
               تصفح أحدث الأبحاث
             </Link>
             <Link
               to="/about"
-              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded-full border-2 border-[#8B5E3C] text-[#8B5E3C] font-bold text-base md:text-lg hover:bg-[#8B5E3C]/10 transition-all"
+              className="w-full sm:w-auto h-12 md:h-14 px-6 md:px-8 inline-flex items-center justify-center rounded border-2 border-primary text-primary font-bold text-base md:text-lg hover:bg-accent-soft transition-colors"
             >
               عن المنتدى
             </Link>
@@ -53,36 +42,41 @@ export default function Home() {
       </section>
 
       {/* Research Section */}
-      <section className="max-w-wide mx-auto px-4 md:px-12 py-12 md:py-24">
+      <section className="max-w-wide mx-auto px-4 md:px-12 py-16 md:py-24">
 
-        <h2 className="font-serif text-2xl md:text-4xl font-bold mb-8 md:mb-12">الأبحاث المختارة</h2>
+        <h2 className="font-serif text-2xl md:text-4xl font-semibold mb-2 text-text">الأبحاث المختارة</h2>
+        <div className="h-0.5 bg-accent-soft mb-8 md:mb-12 w-full" />
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-3">
           {[1, 2, 3].map(i => {
-            const categoryColors = ['border-blue-500 bg-blue-50 text-blue-700', 'border-emerald-500 bg-emerald-50 text-emerald-700', 'border-purple-500 bg-purple-50 text-purple-700'];
-            const colorClass = categoryColors[i % 3];
+            const categories = [
+              { bar: 'bg-primary', badge: 'bg-accent-soft text-primary', label: 'العلاقات الدولية' },
+              { bar: 'bg-accent', badge: 'bg-teal-surface text-accent', label: 'السياسة العامة' },
+              { bar: 'bg-text-muted', badge: 'bg-surface-muted text-text-muted', label: 'التاريخ' },
+            ];
+            const cat = categories[(i - 1) % 3];
 
             return (
               <article
                 key={i}
-                className="group bg-surface border border-border shadow-sm rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col relative"
+                className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-primary transition-colors duration-200 flex flex-col relative"
               >
-                <div className={`absolute top-0 right-0 w-1 h-full ${colorClass.split(' ')[0]} opacity-50`}></div>
+                <div className={`absolute top-0 right-0 w-1 h-full ${cat.bar} opacity-60`}></div>
 
-                <div className="p-5 md:p-8 flex flex-col h-full z-10">
+                <div className="p-6 flex flex-col h-full z-10">
                   <div className="mb-3">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${colorClass.replace('border-', '')}`}>
-                      {i === 1 ? 'العلاقات الدولية' : i === 2 ? 'السياسة العامة' : 'التاريخ'}
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${cat.badge}`}>
+                      {cat.label}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl md:text-2xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">
+                  <h3 className="font-serif text-xl font-semibold mb-3 leading-tight text-text group-hover:text-primary transition-colors">
                     <Link to="/research/example" className="before:absolute before:inset-0">
                       مستقبل التجارة في الشرق الأوسط: تحديات البنية التحتية
                     </Link>
                   </h3>
 
-                  <p className="text-sm md:text-base text-text-muted mb-6 line-clamp-3 leading-relaxed flex-grow">
+                  <p className="text-base text-text-muted mb-6 line-clamp-3 leading-relaxed flex-grow">
                     ملخص قصير يوضح الفكرة الرئيسية للبحث ولماذا هي مهمة في الوقت الحالي. تتناول هذه الورقة تأثيرات التطورات الأخيرة على سياسات النقل البحري والبري في المنطقة وكيفية التكيف معها.
                   </p>
 
@@ -90,16 +84,16 @@ export default function Home() {
                     <div className="flex items-center justify-between mb-3 text-xs font-medium text-text-faint flex-wrap gap-y-1">
                       <span className="flex items-center gap-2">
                         <div className="w-5 h-5 rounded-full bg-surface-muted border border-border overflow-hidden flex-shrink-0">
-                          <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="Author" className="w-full h-full object-cover" />
+                          <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Author" className="w-full h-full object-cover" />
                         </div>
                         د. محمد أحمد
                       </span>
                       <span className="text-text-faint">١٢ مايو ٢٠٢٦</span>
                     </div>
 
-                    <button className="w-full py-2.5 rounded-xl bg-surface-muted text-primary font-bold text-sm group-hover:bg-primary group-hover:text-white transition-colors flex items-center justify-center gap-2">
+                    <button className="w-full py-2.5 rounded border border-primary text-primary font-bold text-sm group-hover:bg-accent-soft transition-colors flex items-center justify-center gap-2">
                       قراءة البحث
-                      <span className="text-base leading-none transform group-hover:-translate-x-1 transition-transform">←</span>
+                      <span className="text-base leading-none">←</span>
                     </button>
                   </div>
                 </div>

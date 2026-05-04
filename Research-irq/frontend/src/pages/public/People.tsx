@@ -7,13 +7,14 @@ export default function People() {
     <>
       <Helmet><title>الخبراء · منتدى سياسات الشرق الأوسط</title></Helmet>
       <div className="max-w-content mx-auto px-4 md:px-12 py-16">
-        <h1 className="font-serif text-3xl md:text-4xl mb-8">الخبراء</h1>
+        <h1 className="font-serif text-3xl md:text-4xl font-bold mb-3 text-accent-dark">الخبراء</h1>
+        <div className="h-0.5 bg-accent-soft mb-8 w-full" />
         <div className="grid gap-8 md:grid-cols-3 sm:grid-cols-2">
           {people.map(person => (
             <div key={person.id} className="flex flex-col">
               <Link to={`/people/${person.slug}`} className="group block mb-4">
                 {person.photo_url ? (
-                  <div className="aspect-square w-full overflow-hidden rounded-lg bg-surface-muted mb-4">
+                  <div className="aspect-square w-full overflow-hidden rounded-xl bg-surface-muted mb-4">
                     <img
                       src={person.photo_url}
                       alt={person.name}
@@ -21,7 +22,7 @@ export default function People() {
                     />
                   </div>
                 ) : (
-                  <div className="aspect-square w-full rounded-lg bg-surface-muted mb-4 flex items-center justify-center text-text-faint">
+                  <div className="aspect-square w-full rounded-xl bg-surface-muted mb-4 flex items-center justify-center text-text-faint">
                     بدون صورة
                   </div>
                 )}

@@ -16,6 +16,8 @@ module.exports = {
         'primary-hover': 'var(--color-primary-hover)',
         accent: 'var(--color-accent)',
         'accent-soft': 'var(--color-accent-soft)',
+        'accent-dark': 'var(--color-accent-dark)',
+        'teal-surface': 'var(--color-teal-surface)',
         success: 'var(--color-success)',
         warning: 'var(--color-warning)',
         danger: 'var(--color-danger)'
@@ -27,7 +29,7 @@ module.exports = {
       },
       maxWidth: {
         prose: '65ch',
-        content: '1080px',
+        content: '1200px',
         wide: '1280px'
       },
       borderRadius: {

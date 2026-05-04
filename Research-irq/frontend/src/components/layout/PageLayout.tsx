@@ -34,8 +34,8 @@ export function PageLayout() {
                 className={({ isActive }) =>
                   `text-sm font-semibold px-4 py-2 rounded-full transition-colors whitespace-nowrap ${
                     isActive
-                      ? 'bg-surface-muted text-primary border border-border shadow-sm'
-                      : 'text-text-muted hover:text-text hover:bg-surface-muted'
+                      ? 'bg-accent-soft text-primary border border-primary/20'
+                      : 'text-text-muted hover:text-primary hover:bg-accent-soft'
                   }`
                 }
               >
@@ -69,8 +69,8 @@ export function PageLayout() {
                 className={({ isActive }) =>
                   `text-sm font-semibold px-4 py-3 rounded-lg transition-colors ${
                     isActive
-                      ? 'bg-surface-muted text-primary'
-                      : 'text-text-muted hover:text-text hover:bg-surface-muted'
+                      ? 'bg-accent-soft text-primary border border-primary/20'
+                      : 'text-text-muted hover:text-primary hover:bg-accent-soft'
                   }`
                 }
               >
@@ -85,7 +85,7 @@ export function PageLayout() {
         <Outlet />
       </main>
 
-      <footer className="bg-primary text-white mt-12 md:mt-24">
+      <footer className="bg-accent-dark text-white mt-12 md:mt-24">
         <div className="max-w-wide mx-auto px-4 md:px-12 py-10 md:py-16 grid gap-8 md:grid-cols-4">
           <div>
             <p className="font-serif font-bold text-lg text-white mb-4">منتدى سياسات الشرق الأوسط</p>
